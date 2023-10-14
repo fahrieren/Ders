@@ -1,0 +1,10 @@
+GitHub, özellikle yazılım geliştirme süreçlerini yönetmek için kullanılan bir platformdur. Açık kaynaklı bir platform olan GitHub, yazılım geliştiricilerin işbirliği yapmalarını, kod depolamalarını, sürüm kontrolünü yönetmelerini ve projelerini paylaşmalarını kolaylaştırır. GitHub, kod tabanının paylaşılması ve geliştirilmesi için bir dizi araç ve özellik sunar. İşte GitHub'ın temel amaçları ve yararları:
+1.Kod Depolama: GitHub, kod tabanlarını bulut tabanlı depolama alanlarında saklamanızı sağlar. Bu sayede kodlarınıza herhangi bir cihazdan erişebilir ve güvenli bir şekilde saklayabilirsiniz.
+2.Sürüm Kontrolü: Git adlı bir dağıtık sürüm kontrol sistemi kullanarak, GitHub projeleri sürüm kontrolü sağlar. Bu, kodunuzun her değişikliği üzerinde çalışmanızı ve geçmiş sürümlere geri dönmenizi kolaylaştırır.
+3.İşbirliği: Birden fazla geliştirici, aynı projede birlikte çalışabilir. İşbirliği yaparken, her biri kendi kopyasında çalışır ve sonunda değişiklikleri birleştirir. Bu sayede ekip içinde sorunsuz bir işbirliği sağlanır.
+4.Proje Yönetimi: GitHub projeleri için iş takibi, sorun izleme ve proje tahtaları gibi araçlar sunar. Bu, projelerinizi yönetmeyi ve ilerlemenizi takip etmeyi kolaylaştırır.
+5.Topluluk Katkısı: GitHub, açık kaynaklı projelerin topluluk katkılarına açık olmasını sağlar. Bu, daha fazla kişinin projenize katkıda bulunmasına ve projenizi geliştirmesine olanak tanır.
+6.İşte Geçmişi İnceleme: Her kod değişikliği, kimin, ne zaman ve neden yaptığınızı izlemek için bir geçmiş tutar. Bu, hataları tanımlamayı ve sorunları çözmeyi kolaylaştırır.
+7.Dökümantasyon: GitHub, projeleriniz için belgeleme sağlar. Bu, projenizin nasıl çalıştığını ve başkalarının nasıl katkıda bulunabileceğini anlatmak için kullanışlıdır.
+8.Sürekli Entegrasyon ve Dağıtım (CI/CD): GitHub, CI/CD entegrasyonunu destekler ve otomatik testler ve sürekli dağıtım için araçlar sunar. Bu, yazılım geliştirme süreçlerini otomatikleştirir ve hataları erken tespit etmeye yardımcı olur.
+9.Güvenlik: GitHub, güvenlik açıklarını tespit etmeye yardımcı olan araçlar sunar. Ayrıca, kodunuzu özel olarak saklayabilir ve erişim kontrolleri uygulayabilirsiniz.
