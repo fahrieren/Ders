@@ -1,0 +1,54 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Cinsiyeti belirtiniz (Erkek/Kadın): ");
+        string cinsiyet = Console.ReadLine().ToLower();
+
+        if (cinsiyet != "erkek" && cinsiyet != "kadın")
+        {
+            Console.WriteLine("Geçersiz cinsiyet bilgisi.");
+            return;
+        }
+
+        Console.WriteLine("Boy (cm): ");
+        if (!double.TryParse(Console.ReadLine(), out double boyCm))
+        {
+            Console.WriteLine("Geçersiz boy bilgisi.");
+            return;
+        }
+
+        Console.WriteLine("Kilo (kg): ");
+        if (!double.TryParse(Console.ReadLine(), out double kilo))
+        {
+            Console.WriteLine("Geçersiz kilo bilgisi.");
+            return;
+        }
+
+        double idealKilo = 0;
+
+        if (cinsiyet == "kadın")
+        {
+            idealKilo = 45.5 + 2.3 * ((boyCm / 2.54) - 60);
+        }
+        else if (cinsiyet == "erkek")
+        {
+            idealKilo = 50 + 2.3 * ((boyCm / 2.54) - 60);
+        }
+
+        if (kilo == idealKilo)
+        {
+            Console.WriteLine("Vücut kitle indeksiniz ideal.");
+        }
+        else if (kilo < idealKilo)
+        {
+            Console.WriteLine("Vücut kitle indeksiniz düşük.");
+        }
+        else
+        {
+            Console.WriteLine("Vücut kitle indeksiniz yüksek.");
+        }
+    }
+}
