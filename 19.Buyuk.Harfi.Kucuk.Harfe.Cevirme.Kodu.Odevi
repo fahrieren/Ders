@@ -1,6 +1,6 @@
 using System;
 
-namespace or259
+namespace BuyukHarfKucukHarfeCevirme
 {
     class Program
     {
