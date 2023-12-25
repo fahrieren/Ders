@@ -1,0 +1,22 @@
+using System;
+namespace or223odev
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string isim; int sayi, a, uzunluk; Console.Write("Karıştırılacak ismi giriniz:");
+            isim = Console.ReadLine(); Console.WriteLine("Karıştırılacak isim " + (uzunluk = isim.Length) + " karakter");
+            bool[] D = new bool[uzunluk];
+            Random rastgele = new Random();
+            for (a = 0; a < uzunluk; a++)
+            {
+                do
+                {
+                    sayi = rastgele.Next(uzunluk);
+                } while (D[sayi] == true); D[sayi] = true; Console.Write(isim[sayi]);
+            }
+            Console.Write("\n\n\nPress any key to continue . . . "); Console.ReadKey(true);
+        }
+    }
+}
