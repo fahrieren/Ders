@@ -1,0 +1,96 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Otopark Çıkış Ücreti Hesaplama");
+
+        Console.Write("Araç Türü (Otomobil/Kamyon/İş Makinası): ");
+        string aracTuru = Console.ReadLine().ToLower();
+
+        Console.Write("Kalış Süresi (saat): ");
+        if (!int.TryParse(Console.ReadLine(), out int kalisSuresi))
+        {
+            Console.WriteLine("Geçersiz saat girişi.");
+            return;
+        }
+
+        double cikisUcreti = 0;
+
+        switch (aracTuru)
+        {
+            case "otomobil":
+                cikisUcreti = HesaplaOtomobilUcreti(kalisSuresi);
+                break;
+
+            case "kamyon":
+                cikisUcreti = HesaplaKamyonUcreti(kalisSuresi);
+                break;
+
+            case "iş makinası":
+                cikisUcreti = HesaplaIsMakinasiUcreti(kalisSuresi);
+                break;
+
+            default:
+                Console.WriteLine("Geçersiz araç türü.");
+                return;
+        }
+
+        Console.WriteLine($"Çıkış Ücreti: {cikisUcreti} TL");
+    }
+
+    static double HesaplaOtomobilUcreti(int kalisSuresi)
+    {
+        double toplamUcret = 0;
+
+        if (kalisSuresi <= 2)
+        {
+            toplamUcret = 5;
+        }
+        else
+        {
+            toplamUcret = 5 + ((kalisSuresi - 2) / 10) * 8;
+
+            toplamUcret += (kalisSuresi / 24) * 10;
+        }
+
+        return toplamUcret;
+    }
+
+    static double HesaplaKamyonUcreti(int kalisSuresi)
+    {
+        double toplamUcret = 0;
+
+        if (kalisSuresi <= 2)
+        {
+            toplamUcret = 8;
+        }
+        else
+        {
+            toplamUcret = 8 + ((kalisSuresi - 2) / 8) * 2;
+
+            toplamUcret += (kalisSuresi / 24) * 10;
+        }
+
+        return toplamUcret;
+    }
+
+    static double HesaplaIsMakinasiUcreti(int kalisSuresi)
+    {
+        double toplamUcret = 0;
+
+        if (kalisSuresi <= 2)
+        {
+            toplamUcret = 12;
+        }
+        else
+        {
+            toplamUcret = 12 + ((kalisSuresi - 2) / 8) * 3;
+
+            toplamUcret += (kalisSuresi / 24) * 10;
+        }
+
+        return toplamUcret;
+    }
+}
