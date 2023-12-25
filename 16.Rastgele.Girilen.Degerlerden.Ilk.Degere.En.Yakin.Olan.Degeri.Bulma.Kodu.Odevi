@@ -1,0 +1,43 @@
+using System;
+
+namespace EnYakinSayi
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.Write("Dizinin eleman sayısını giriniz: ");
+            if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
+            {
+                int[] B = new int[n];
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write($"{i + 1}. elemanı giriniz: ");
+                    while (!int.TryParse(Console.ReadLine(), out B[i]))
+                    {
+                        Console.WriteLine("Geçerli bir sayı giriniz!");
+                        Console.Write($"{i + 1}. elemanı giriniz: ");
+                    }
+                }
+
+                int e = 1;
+
+                for (int a = 2; a < B.Length; a++)
+                {
+                    if (Math.Abs(B[0] - B[a]) < Math.Abs(B[0] - B[e]))
+                        e = a;
+                }
+
+                Console.WriteLine("İlk Sayıya En Yakın Sayı = " + B[e]);
+            }
+            else
+            {
+                Console.WriteLine("Geçerli bir sayı girmediniz.");
+            }
+
+            Console.Write("Devam etmek için bir tuşa basınız...");
+            Console.ReadKey(true);
+        }
+    }
+}
