@@ -1,0 +1,33 @@
+using System;
+
+namespace AsalSayiKontrolu
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Bir sayı girin: ");
+            if (!int.TryParse(Console.ReadLine(), out int b) || b <= 1)
+            {
+                Console.WriteLine("Geçersiz sayı girişi. Program sonlandırılıyor.");
+                return;
+            }
+
+            string s = "Asal Sayı";
+
+            for (int a = 2; a <= Math.Sqrt(b); a++)
+            {
+                if (b % a == 0)
+                {
+                    s = "Asal Sayı Değil";
+                    break;
+                }
+            }
+
+            Console.WriteLine($"{b} Sayısı {s}");
+
+            Console.Write("Devam etmek için bir tuşa basın...");
+            Console.ReadKey();
+        }
+    }
+}
