@@ -1,0 +1,48 @@
+using System;
+
+namespace SayiOkuma
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a;
+            string s = " ";
+            string[] Birler = { "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+            string[] Onlar = { "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+            string[] Yuzler = { "", "Yüz" };
+
+            Console.Write("Bir Sayı Giriniz: ");
+            if (int.TryParse(Console.ReadLine(), out a) && a >= 1 && a <= 999)
+            {
+                if (a / 100 >= 1)
+                {
+                    s = Birler[(a / 100) - 1] + " " + Yuzler[1];
+                    a %= 100;
+
+                    if (a % 10 != 0 || a / 10 != 0)
+                        s += " ";
+                }
+
+                if (a / 10 >= 1)
+                {
+                    s += Onlar[(a / 10) - 1];
+                }
+
+                if (a % 10 != 0)
+                {
+                    s += Birler[(a % 10) - 1];
+                }
+
+                Console.WriteLine(s);
+            }
+            else
+            {
+                Console.WriteLine("Uygun bir değer girmediniz.");
+            }
+
+            Console.Write("Devam etmek için bir tuşa basınız...");
+            Console.ReadKey(true);
+        }
+    }
+}
