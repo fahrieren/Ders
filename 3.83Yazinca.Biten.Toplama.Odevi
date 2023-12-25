@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int toplam = 0;
+
+        while (true)
+        {
+            Console.Write("Bir sayı girin (83 girerek toplamayı bitirin): ");
+            string girilenSayi = Console.ReadLine();
+
+            if (girilenSayi == "83")
+            {
+                break;
+            }
+
+            if (!int.TryParse(girilenSayi, out int sayi))
+            {
+                Console.WriteLine("Geçersiz bir sayı girdiniz.");
+                continue;
+            }
+
+            toplam += sayi;
+        }
+
+        Console.WriteLine($"Toplam = {toplam}");
+    }
+}
