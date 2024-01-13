@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("İlk sayıyı girin: ");
+
+        if (!int.TryParse(Console.ReadLine(), out int ilkSayi))
+        {
+            Console.WriteLine("Geçersiz sayı girişi.");
+            return;
+        }
+
+        Console.Write("İkinci sayıyı girin: ");
+
+        if (!int.TryParse(Console.ReadLine(), out int ikinciSayi))
+        {
+            Console.WriteLine("Geçersiz sayı girişi.");
+            return;
+        }
+
+        Console.Write("TEK’leri mi ÇİFT’leri mi toplamak istersiniz? (TEK/ÇİFT): ");
+        string tercih = Console.ReadLine().ToUpper();
+
+        int baslangic = Math.Min(ilkSayi, ikinciSayi);
+        int bitis = Math.Max(ilkSayi, ikinciSayi);
+
+        int toplam = 0;
+        int i = baslangic;
+
+    TercihKontrol:
+
+        if (tercih == "TEK")
+        {
+            if (i <= bitis)
+            {
+                toplam += i;
+                i += 2;
+                goto TercihKontrol;
+            }
+        }
+        else if (tercih == "ÇİFT")
+        {
+            if (i <= bitis)
+            {
+                toplam += i;
+                i += 2;
+                goto TercihKontrol;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz tercih. 'TEK' veya 'ÇİFT' seçiniz.");
+            return;
+        }
+
+        Console.WriteLine($"{baslangic} ile {bitis} arasındaki {tercih} sayıların toplamı: {toplam}");
+    }
+}
