@@ -1,0 +1,35 @@
+using System;
+
+namespace BursArtisHesapla
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] burslar = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
+            int b = 0;
+
+        BursHesapla:
+
+            if (burslar[b] >= 500)
+            {
+                Console.WriteLine(burslar[b]);
+                b++;
+                goto DevamEt;
+            }
+
+            double yeniBurs = (burslar[b] * 0.1) + burslar[b] + 50;
+            Console.WriteLine(yeniBurs);
+            burslar[b] = yeniBurs;
+
+        DevamEt:
+
+            b++;
+            if (b < burslar.Length)
+                goto BursHesapla;
+
+            Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
