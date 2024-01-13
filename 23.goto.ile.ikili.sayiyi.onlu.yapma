@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("İkili sayı girin: ");
+        string ikiliSayiStr = Console.ReadLine();
+
+        if (!IsBinary(ikiliSayiStr))
+        {
+            Console.WriteLine("Geçersiz ikili sayı girişi.");
+            return;
+        }
+
+        int sayi = Convert.ToInt32(ikiliSayiStr);
+        int onluDeger = 0, tabanDeger = 1, basamakDeger;
+
+    Basla:
+
+        if (sayi > 0)
+        {
+            basamakDeger = sayi % 10;
+            onluDeger = onluDeger + basamakDeger * tabanDeger;
+            sayi = sayi / 10;
+            tabanDeger = tabanDeger * 2;
+            goto Basla;
+        }
+
+        Console.WriteLine("İkili (Binary) Sayı: " + ikiliSayiStr);
+        Console.WriteLine("Onlu (Decimal) Sayı: " + onluDeger);
+    }
+
+    static bool IsBinary(string input)
+    {
+        foreach (char c in input)
+        {
+            if (c != '0' && c != '1')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
