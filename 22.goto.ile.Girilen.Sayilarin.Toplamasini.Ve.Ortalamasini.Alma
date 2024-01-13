@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Kaç adet sayı girmek istersiniz?: ");
+
+        if (!int.TryParse(Console.ReadLine(), out int adet) || adet <= 0)
+        {
+            Console.WriteLine("Geçersiz adet girişi.");
+            return;
+        }
+
+        int toplam = 0;
+        int i = 1;
+
+    Giris:
+
+        if (i <= adet)
+        {
+            Console.Write($"Sayı #{i}: ");
+            if (!int.TryParse(Console.ReadLine(), out int sayi))
+            {
+                Console.WriteLine("Geçersiz sayı girişi. Program sonlandırılıyor.");
+                return;
+            }
+
+            toplam += sayi;
+            i++;
+            goto Giris;
+        }
+
+        double ortalama = (double)toplam / adet;
+
+        Console.WriteLine($"Girilen sayıların toplamı: {toplam}");
+        Console.WriteLine($"Girilen sayıların ortalaması: {ortalama}");
+    }
+}
